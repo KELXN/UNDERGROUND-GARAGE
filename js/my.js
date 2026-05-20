@@ -55,4 +55,19 @@ $('#draggable2').draggable();
 		var $card = $(this);
 		$card.removeClass('tilt').css('transform', 'translateY(0) scale(1) rotateX(0deg) rotateY(0deg)');
 	});
-});
+
+	var currentPath = window.location.pathname.toLowerCase();
+	if (currentPath.endsWith('/index.html') || currentPath.endsWith('/') || currentPath.endsWith('\\')) {
+		$('.home-link').addClass('hide-on-home');
+	}
+
+    function updateScrollProgress() {
+        var scrollTop = $(window).scrollTop();
+        var docHeight = $(document).height() - $(window).height();
+        var progress = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+        $('.scroll-fill').css('width', progress + '%');
+        $('.scroll-car').css('transform', 'translate(50%, -50%)');
+    }
+
+    updateScrollProgress();
+    $(window).on('scroll resize', updateScrollProgress);
