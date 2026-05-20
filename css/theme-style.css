@@ -1956,4 +1956,143 @@ body{
 	background: #000;
 	color: #fff;
 }
+.products-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #0a0a0a;
+}
 
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.products-slider {
+    overflow: hidden;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slider-track {
+    display: flex;
+    gap: 25px;
+    animation: scroll 25s linear infinite;
+}
+
+.product-card {
+    min-width: 280px;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    border-color: #c8102e;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card p {
+    padding: 15px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* Автоскрол */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Паузa при наведенні */
+.products-slider:hover .slider-track {
+    animation-play-state: paused;
+}
+/* ====================== ОСНОВНІ ШРИФТИ ====================== */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+    --heading-font: 'Anton', 'Oswald', Impact, sans-serif;
+    --body-font: 'Rajdhani', 'Montserrat', system-ui, sans-serif;
+}
+
+/* Заголовки */
+h1, h2, h3, .section-title {
+    font-family: var(--heading-font);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(200, 20, 40, 0.6);
+}
+
+/* Основний текст */
+body, p, li, span, a {
+    font-family: var(--body-font);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Агресивніші заголовки */
+.section-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    -webkit-text-stroke: 1.5px #000;
+    text-shadow: 
+        3px 3px 0 #000,
+        -2px -2px 0 #000,
+        0 0 15px #c8102e;
+    margin-bottom: 40px;
+}
+
+/* Стиль для кнопок і акцентного тексту */
+.accent-text {
+    color: #ff3333;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(10, 10, 10, 0.85);
+    z-index: 9999;
+    overflow: hidden;
+    border-bottom: 1px solid #c8102e;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #ff1a1a, #ff6666, #ff1493);
+    box-shadow: 0 0 12px #ff1493,
+                0 0 25px #ff1493;
+    transition: width 0.08s ease-out;
+}
+
+.car {
+    position: absolute;
+    top: -22px;
+    font-size: 32px;
+    transition: left 0.08s ease-out;
+    filter: drop-shadow(0 0 10px #ff1493);
+    z-index: 10;
+}
